@@ -16,10 +16,18 @@
 <div id='map'></div>
 
 <script>
+
 // Provide your access token
 L.mapbox.accessToken = 'pk.eyJ1IjoicGxhbmVtYWQiLCJhIjoiemdYSVVLRSJ9.g3lbg_eN0kztmsfIPxa9MQ';
+
 // Create a map in the div #map
 L.mapbox.map('map', 'planemad.c8c0a510');
+
+//Add bus stops from geojson file
+var featureLayer = L.mapbox.featureLayer()
+    .loadURL('blr-bus-stops.geojson')
+    .addTo(map);
+
 </script>
 
 </body>
